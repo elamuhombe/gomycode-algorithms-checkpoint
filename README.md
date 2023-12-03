@@ -5,13 +5,13 @@ The Sentence Analysis Algorithm is a program designed to analyze a given sentenc
 ### Algorithm Details
 The algorithm operates as follows:
 
-1.Variable declaration and Initialization
+1.Variable declaration and Initialization of counters
 - STRING sentence;
+- INTEGER length = 0;
+- INTEGER wordcount = 0;
+- INTEGER vowelcount = 0;
+- STRING vowel := "aeiouAEIOU";
 - STRING words[];
-- INTEGER length := 0;
-- INTEGER wordcount := 0;
-- INTEGER vowelcount := 0;
-- STRING vowels := "aeiouAEIOU";
 
 2. Calculate Sentence Length:
 Iterate through each character in the sentence to find the length of the sentence.
@@ -40,7 +40,7 @@ Usage
 ### Summary
 1. Input: Read a sentence.
 2. Length Count: Iterate through each character in the sentence to find the length of the sentence.
-3. Sentence Modification: If necessary, replace the full stop with a blank space and remove leading and trailing whitespaces.
+3. Sentence Modification: replaces the full stop with a blank space and removes leading and trailing whitespaces.
 4. Word Count: Split the sentence into an array of words and iterate through each word, incrementing the word count.
 5. Vowel Count: For each non-empty word, iterate through each character to count vowels and increment the vowel count.
 6. Output: Display the length of the sentence, the number of words, and the number of vowels.
