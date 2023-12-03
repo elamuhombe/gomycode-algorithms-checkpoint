@@ -1,47 +1,64 @@
 ALGORITHM read_sentence
 VAR
+    // Variables declaration and initialization of counters
     STRING sentence;
+    INTEGER length = 0;
+    INTEGER wordcount = 0;
+    INTEGER vowelcount = 0;
+    STRING vowel := "aeiouAEIOU";
     STRING words[];
-    INTEGER length := 0;
-    INTEGER wordcount := 0;
-    INTEGER vowelcount := 0;
-    STRING vowels := "aeiouAEIOU";
 
 BEGIN
-    // Read input sentence
 
     // Iterate through each character in the sentence to find the length of the sentence
-    FOR EACH character IN sentence
+    FOR character IN sentence
         // Increment length counter
         length := length + 1;
-    END FOR
-    
-    // Replace the full stop with a blank space (if necessary)
-    sentence := replace(sentence, ".", "");
 
-    // Remove leading and trailing whitespaces
+    // Remove leading and trailing spaces
     sentence := trim(sentence);
 
-    // Split the sentence into an array of words
-    words := split(sentence, " ");
+    // Initialize a variable to store the current word
+    STRING currentWord := "";
 
-    // Iterate through each word in the array
-    FOR EACH word IN words
-        // Check if the word is not an empty string
-        IF word is not empty THEN
-            // Increment the word count
-            wordcount := wordcount + 1;
+    // Iterate through each character in the sentence
+    FOR character IN sentence
+        // Check if the character is a letter or a space
+        IF character IN ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ")
+            // If it's a letter, add it to the current word
+            currentWord := currentWord + character;
+        ELSE
+            // If it's not a letter, process the current word
+            IF currentWord is not empty
+                // Increment the word count
+                wordcount := wordcount + 1;
 
-            // Iterate through each character in the word to count vowels
-            FOR EACH character IN word
-                // Check if the character is a vowel
-                IF character IN vowels THEN
-                    // Increment the vowel count
-                    vowelcount := vowelcount + 1;
-                END IF
-            END FOR
-        END IF
-    END FOR
+                // Iterate through each character in the word to count vowels
+                FOR char IN currentWord
+                    // Check if the character is a vowel
+                    IF char IN vowel
+                        // Increment the vowel count
+                        vowelcount := vowelcount + 1;
+
+                // Reset the current word for the next iteration
+                currentWord := "";
+            END IF;
+        END IF;
+    END FOR;
+
+    // Check if there's a last word after the loop
+    IF currentWord is not empty
+        wordcount := wordcount + 1;
+
+        // Iterate through each character in the last word to count vowels
+        FOR char IN currentWord
+            // Check if the character is a vowel
+            IF char IN vowel
+                // Increment the vowel count
+                vowelcount := vowelcount + 1;
+            END IF;
+        END FOR;
+    END IF;
 
     // OUTPUT results
     OUTPUT length, wordcount, vowelcount;
