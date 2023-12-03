@@ -1,0 +1,45 @@
+ALGORITHM read_sentence
+VAR
+STRING sentence[];
+INTEGER length ;
+INTEGER wordcount;
+STRING vowel := "aeiouAEIOU";
+
+
+BEGIN
+    // Initialize counters
+    length := 0
+    wordcount := 0
+    vowelcount := 0
+
+    // Iterate through each character in the sentence to find length of the sentence
+    FOR EACH character IN sentence
+        // Increment length counter
+        length+=1;
+    
+    // Replace the full stop with a blank space
+    sentence = replace(sentence, ".", "");
+
+    //Remove the blank space
+    sentence=trim(sentence);
+
+    // Split the sentence into an array of words
+    words = split(sentence, " ");
+
+    // Iterate through each word in the array
+    for each word in words:
+        // Check if the word is not an empty string
+        if word is not empty:
+            // Increment the word count
+            wordcount = wordcount + 1;
+
+    // Iterate through each character in the word to count vowels
+            FOR EACH character IN word
+                // Check if the character is a vowel
+                IF character IN vowels THEN
+                    // Increment the vowel count
+                    vowelcount := vowelcount + 1
+    
+    // OUTPUT results
+    OUTPUT length, wordcount, vowelcount
+END
