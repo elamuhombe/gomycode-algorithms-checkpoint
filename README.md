@@ -7,7 +7,7 @@ The algorithm operates as follows:
 
 1.Variable declaration
 - sentence, vowel : STRING;
-- length, wordcount, vowelcount: INTEGER;
+- length, wordcount, vowelcount : INTEGER;
 - words : ARRAY [] OF STRING;
 
 2. Variables initialization
