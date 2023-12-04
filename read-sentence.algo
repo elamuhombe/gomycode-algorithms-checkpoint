@@ -3,7 +3,6 @@ VAR
     
     sentence, vowel : STRING; //Declare 2 variables with the names "sentence" and "vowel" of string type
     length, wordcount, vowelcount : INTEGER; //Declare 3 variables with the names "length", "wordcount" and "vowelcount" of integer type
-    words : ARRAY[] OF STRING; //Declare a variable with the name "words" of array string type
 
 BEGIN
     // Initialize variables
