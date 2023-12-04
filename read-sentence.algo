@@ -11,6 +11,9 @@ BEGIN
     vowelcount := 0;
     vowel := "aeiouAEIOU";
 
+    //Read input sentence
+    Read sentence;
+    
     // Iterate through each character in the sentence to find the length of the sentence
     FOR character IN sentence
         // Increment length counter
