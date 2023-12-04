@@ -1,11 +1,8 @@
 ALGORITHM read_sentence
 VAR
     // Declare variables
-    sentence: STRING;
-    length: INTEGER
-    wordcount: INTEGER;
-    vowelcount: INTEGER
-    vowel: STRING;
+    sentence, vowel: STRING;
+    length, wordcount, vowelcount: INTEGER;
     words: ARRAY[] OF STRING;
 
 BEGIN
@@ -39,8 +36,8 @@ BEGIN
                 // Increment the word count
                 wordcount := wordcount + 1;
 
-                // Iterate through each character in the word to count vowels
-               // Iterate through each character in the word to count vowels
+        // Iterate through each character in the word to count vowels
+    
         FOR char IN currentWord DO
         // Check if the lowercase version of the character is a vowel
             IF LowerCase(char) IN vowel THEN
