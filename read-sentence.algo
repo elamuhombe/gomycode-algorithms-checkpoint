@@ -1,14 +1,20 @@
 ALGORITHM read_sentence
 VAR
-    // Variables declaration and initialization of counters
-    STRING sentence;
-    INTEGER length = 0;
-    INTEGER wordcount = 0;
-    INTEGER vowelcount = 0;
-    STRING vowel := "aeiouAEIOU";
-    STRING words[];
+    // Declare variables
+    sentence: STRING;
+    length: INTEGER
+    wordcount: INTEGER;
+    vowelcount: INTEGER
+    vowel: STRING;
+    words: ARRAY[] OF STRING;
 
 BEGIN
+    // Initialize variables
+    sentence :='';
+    length := 0;
+    wordcount := 0;
+    vowelcount := 0;
+    vowel := "aeiouAEIOU";
 
     // Iterate through each character in the sentence to find the length of the sentence
     FOR character IN sentence
@@ -34,11 +40,15 @@ BEGIN
                 wordcount := wordcount + 1;
 
                 // Iterate through each character in the word to count vowels
-                FOR char IN currentWord
-                    // Check if the character is a vowel
-                    IF char IN vowel
-                        // Increment the vowel count
-                        vowelcount := vowelcount + 1;
+               // Iterate through each character in the word to count vowels
+        FOR char IN currentWord DO
+        // Check if the lowercase version of the character is a vowel
+            IF LowerCase(char) IN vowel THEN
+            // Increment the vowel count
+            vowelcount := vowelcount + 1;
+            END IF;
+        END FOR;
+
 
                 // Reset the current word for the next iteration
                 currentWord := "";
@@ -50,12 +60,18 @@ BEGIN
     IF currentWord is not empty
         wordcount := wordcount + 1;
 
-        // Iterate through each character in the last word to count vowels
-        FOR char IN currentWord
-            // Check if the character is a vowel
-            IF char IN vowel
+        // Iterate through each character in the word to count vowels
+        FOR char IN currentWord DO
+            // Check if the lowercase version of the character is a vowel
+            IF LowerCase(char) IN vowel
                 // Increment the vowel count
                 vowelcount := vowelcount + 1;
+            ELSE
+                // Check if the uppercase version of the character is a vowel
+                IF UpperCase(char) IN vowel
+                    // Increment the vowel count
+                    vowelcount := vowelcount + 1;
+                END IF;
             END IF;
         END FOR;
     END IF;
