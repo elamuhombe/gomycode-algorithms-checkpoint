@@ -36,18 +36,8 @@ BEGIN
             END IF;
         END IF;
     END FOR;
-        // Iterate through each character in the word to count vowels
-    
-        FOR char IN currentWord DO
-        // Check if the lowercase version of the character is a vowel
-            IF LowerCase(char) IN vowel THEN
-            // Increment the vowel count
-            vowelcount := vowelcount + 1;
-            END IF;
-        END FOR;
 
-
-                // Reset the current word for the next iteration
+            // Reset the current word for the next iteration
                 currentWord := "";
             END IF;
         END IF;
