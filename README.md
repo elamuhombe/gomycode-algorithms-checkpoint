@@ -5,15 +5,19 @@ The Sentence Analysis Algorithm is a program designed to analyze a given sentenc
 ### Algorithm Details
 The algorithm operates as follows:
 
-1.Variable declaration and Initialization of counters
-- STRING sentence;
-- INTEGER length = 0;
-- INTEGER wordcount = 0;
-- INTEGER vowelcount = 0;
-- STRING vowel := "aeiouAEIOU";
-- STRING words[];
+1.Variable declaration
+- sentence, vowel : STRING;
+- length, wordcount, vowelcount: INTEGER;
+- words : ARRAY [] OF STRING;
 
-2. Calculate Sentence Length:
+2. Variables initialization
+- sentence := '';
+- length := 0;
+- wordcount :=0;
+- vowelcount :=0;
+- vowel := 'aeiouAEIOU';
+
+3. Calculate Sentence Length:
 Iterate through each character in the sentence to find the length of the sentence.
 Preprocess Sentence:
 
@@ -21,15 +25,15 @@ Preprocess Sentence:
 - Remove leading and trailing spaces.
 - Split Sentence into Words:
 
-3. Split the sentence into an array of words.
+4. Split the sentence into an array of words.
 Word Count and Vowel Count:
 
-4. Iterate through each word in the array.
+5. Iterate through each word in the array.
 Increment the word count for each non-empty word.
 For each character in a word, check if it is a vowel and increment the vowel count accordingly.
 Output Results:
 
-5. Display the calculated results, including the length of the sentence, word count, and vowel count.
+6. Display the calculated results, including the length of the sentence, word count, and vowel count.
 Usage
 
 ### To use the Sentence Analysis Algorithm, follow these steps:
@@ -49,4 +53,4 @@ Usage
 None
 
 ### License
-This project is licensed under Elaine .Muhombe
+This project is licensed under Elaine Muhombe
