@@ -1,9 +1,9 @@
 ALGORITHM read_sentence
 VAR
     // Declare variables
-    sentence, vowel: STRING;
-    length, wordcount, vowelcount: INTEGER;
-    words: ARRAY[] OF STRING;
+    sentence, vowel : STRING;
+    length, wordcount, vowelcount : INTEGER;
+    words : ARRAY[] OF STRING;
 
 BEGIN
     // Initialize variables
