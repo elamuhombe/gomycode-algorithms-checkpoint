@@ -12,7 +12,7 @@ BEGIN
     vowel := "aeiouAEIOU";
 
     //Read input sentence
-    Read sentence;
+    READ sentence;
     
     // Iterate through each character in the sentence to find the length of the sentence
     FOR character IN sentence
